@@ -1,0 +1,13 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/play/play",
+        "pages/list/list"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#1E84E4",
+        "navigationBarTitleText": "Music X",
+        "navigationBarTextStyle": "white"
+    }
+}

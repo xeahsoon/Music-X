@@ -1,0 +1,74 @@
+<!--pages/play/play.wxml-->
+<view class='container' style='background-color:{{theme}};' bindtap='checkIfListTaped'>
+    <view class='play-top' hidden='{{showLyric}}'>
+        <view class='song-pic' style='background-image: url(/images/singer.jpg);' bindtap='switchView'></view>
+        <text class='song-name'>We are never getting back together</text>
+        <text class='song-singer'>Taylor Swift</text>
+    </view>
+    <view class='play-top' hidden='{{!showLyric}}'>
+        <scroll-view scroll-y='true' class='song-lyric' bindtap='switchView'>
+            <view>We were both young when I first saw you</view>
+            <view>I closed my eyes and flashback starts</view>
+            <view>I am standing there</view>
+            <view>On a balcony in summer air</view>
+            <view>See the light see the party the ballguns</view>
+            <view>See you make your way through the crowd and say hello</view>
+            <view>Little did I know</view>
+            <view class='lyric-now'>Cause you were Romeo you were throwing peples</view>
+            <view>And my dadie said stay away from Juliet</view>
+            <view>Cause you were everything to me</view>
+            <view>I was begging you please don't go</view>
+            <view>And I said Romeo take me some where we can be alone</view>
+            <view>I'll be waiting for you but you never come</view>
+            <view>Is this in my head</view>
+            <view>I don't know what to think</view>
+            <view>He kneels to the ground and</view>
+            <view>Pulled out a ring and said</view>
+            <view>Marry me Juliet you never have to be alone</view>
+            <view>I love you and that's all I really know</view>
+            <view>So talk to your dad go pick out a white dress</view>
+            <view>It's a love story baby Just say yes</view>
+            <view>Oh oh~ oh oh oh</view>
+            <view>We were both young when I first saw you</view>
+            <view>...</view>
+        </scroll-view>
+    </view>
+    <view class='play-middle'>
+        <slider class='song-slider' min='0' max='100' block-size='12'></slider>
+    </view>
+    <view class='play-bottom'>
+        <image id='list' src='/images/svg/bars-light.svg' bindtap='showPlayList'></image>
+        <image src='/images/svg/step-backward-light.svg'></image>
+        <image src='/images/svg/play-circle-light.svg' style='width:80rpx;' hidden='{{!musicPlaying}}' bindtap='playSong'></image>
+        <image src='/images/svg/pause-circle-light.svg' style='width:80rpx;' hidden='{{musicPlaying}}' bindtap='playSong'></image>
+        <image src='/images/svg/step-forward-light.svg'></image>
+        <image src='/images/svg/share.svg' bindtap='shareThisSong'></image>
+    </view>
+    <view id='playList' class='play-list' hidden='{{!showPlayList}}'>
+        <text>播放列表</text>
+        <scroll-view scroll-y='true'>
+            <view>Love Song</view>
+            <view>We are never getting back together</view>
+            <view>Back to december</view>
+            <view>Safe and sound</view>
+            <view>Bad blood</view>
+            <view>Shake it off</view>
+            <view>Red</view>
+            <view>Welcome to newyork</view>
+            <view>Starlight</view>
+            <view>22</view>
+            <view>Love Song</view>
+            <view>We are never getting back together</view>
+            <view>Back to december</view>
+            <view>Safe and sound</view>
+            <view>Bad blood</view>
+            <view>Shake it off</view>
+            <view>Red</view>
+            <view>Welcome to newyork</view>
+            <view>Starlight</view>
+            <view>22</view>
+        </scroll-view>
+    </view>
+    
+     <!-- <view class='glass' style='background-image: url({{glass}});'></view> -->
+</view>

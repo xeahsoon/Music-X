@@ -1,0 +1,81 @@
+/* pages/play/play.wxss */
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.glass {
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    top: 0rpx;
+    bottom: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    filter: blur(15px);
+    transform: scale(1.1);
+    z-index: -1;
+}
+.glass::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.play-top {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 888rpx;
+}
+.play-top .song-pic{
+    width: 600rpx;
+    height: 600rpx;
+    margin: 100rpx auto 50rpx;
+    background-position: center;
+    background-size: cover;
+    border: 2rpx solid white;
+}
+.play-top .song-lyric {
+    width: 600rpx;
+    height: 800rpx;
+    margin: 50rpx auto;
+    color: #eee;
+}
+.play-top .lyric-now {
+    color: white;
+    font-size: 34rpx;
+}
+.play-middle .song-slider {
+    width: 600rpx;
+    margin: 20rpx auto;
+}
+.play-bottom {
+    display: flex;
+    justify-content: space-around;
+    margin: 20rpx 30rpx;
+}
+.play-bottom image {
+    width: 40rpx;
+    height: 150rpx;
+}
+.play-list {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: absolute;
+    width: 60%;
+    bottom: 150rpx;
+    left: 120rpx;
+    padding: 20rpx 10rpx;
+    white-space: nowrap;
+}
+.play-list scroll-view {
+    margin-top: 10rpx;
+    max-height: 666rpx;
+    text-overflow: ellipsis;
+}

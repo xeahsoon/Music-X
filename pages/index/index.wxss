@@ -1,0 +1,243 @@
+/* 主页面swiper */
+
+.page-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.page-swiper swiper-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.take-place {
+    width: 100%;
+    height: 100rpx;
+}
+
+.recmd-swiper {
+    width: 100%;
+    height: 300rpx;
+}
+
+.recmd-swiper image {
+    width: 100%;
+    position: absolute;
+    top: -25%;
+}
+
+.channel {
+    width: 100%;
+    margin-top: 30rpx;
+}
+
+.channel .channel-title {
+    border-left: 2px solid #428bca;
+    padding-left: 10rpx;
+}
+
+.channel .channel-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.channel .single-list {
+    background-color: white;
+    margin: 20rpx 0rpx;
+}
+
+.channel .single-list image {
+    display: block;
+    width: 245rpx;
+    height: 245rpx;
+}
+
+.channel .single-list text {
+    display: block;
+    box-sizing: border-box;
+    width: 245rpx;
+    font-size: 26rpx;
+    padding: 0rpx 10rpx;
+}
+
+.search .search-bar {
+    padding: 16rpx 20rpx;
+    background-color: #efeff4;
+}
+
+.search .search-box {
+    border-radius: 10rpx;
+    background: #fff;
+    border: 1rpx solid #e6e6ea;
+    display: flex;
+}
+
+.site-picker {
+    box-sizing: border-box;
+    width: 66rpx;
+    height: 66rpx;
+    padding: 10rpx;
+}
+
+.picker-logo {
+    height: 48rpx;
+    width: 48rpx;
+}
+
+.search .input-search {
+    flex: 1;
+    width: 100%;
+    height: 66rpx;
+    padding-left: 20rpx;
+}
+
+.search .input-icon {
+    box-sizing: border-box;
+    height: 66rpx;
+    width: 66rpx;
+    padding: 16rpx;
+}
+
+.about {
+    height: 200rpx;
+    width: 100%;
+    background-color: #ddd;
+    text-align: center;
+    padding-top: 50rpx;
+}
+
+.result {
+    width: 100%;
+    height: 100%;
+}
+
+.result-item {
+    display: flex;
+    height: 100rpx;
+    padding: 0rpx 20rpx;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #e5e5e5;
+}
+
+.result-loading {
+    padding-top: 30rpx;
+    text-align: center;
+    height: 180rpx;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.result-loading .loading-img {
+    height: 40rpx;
+    width: 30rpx;
+    margin-right: 10rpx;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(359deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.result-singer-pic {
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 40rpx;
+    margin-right: 10rpx;
+}
+
+.result-item-info {
+    flex: 1;
+    padding: 10rpx 0rpx;
+}
+
+.result-item-info .title, .result-item-info .subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 600rpx;
+    line-height: 30rpx;
+}
+
+.result-item-info .title {
+    margin-bottom: 4rpx;
+    color: #000;
+}
+
+.result-item-info .subtitle {
+    color: #808080;
+    font-size: 24rpx;
+}
+
+.result-item:first-child .subtitle text {
+    margin-right: 20rpx;
+}
+
+.result-item:not(:first-child) .subtitle text:not(:first-child):before {
+    content: '/';
+    margin: 0 8rpx;
+}
+
+.result-item-icon {
+    height: 100rpx;
+    width: 24rpx;
+    margin-left: 10rpx;
+}
+
+/* 播放控制 */
+
+.control {
+    position: fixed;
+    bottom: 0rpx;
+    background-color: #fff;
+    height: 100rpx;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.control .song-pic {
+    height: 120rpx;
+    width: 120rpx;
+}
+
+.control .song-info {
+    flex: 1;
+    padding-left: 10rpx;
+}
+
+.control .song-name {
+    color: #000;
+}
+
+.control .song-lyric {
+    color: #808080;
+    font-size: 24rpx;
+}
+
+.control .song-name, .control .song-lyric {
+    max-width: 390rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.control .last-song, .control .next-song {
+    color: #888;
+    height: 100rpx;
+    width: 35rpx;
+    text-align: center;
+    margin: 0rpx 20rpx;
+}
+
+.control .play-song image {
+    height: 100rpx;
+    width: 60rpx;
+}

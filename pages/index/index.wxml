@@ -1,0 +1,108 @@
+<!--index.wxml-->
+<swiper class='page-swiper' current="{{currentTab}}" duration="300" bindchange="switchTab">
+    <!-- 推荐 -->
+    <swiper-item class='recommend'>
+        <scroll-view style='height:100%;' scroll-y='true' enable-back-to-top='true'>
+        <!-- 首页轮播 -->
+        <swiper class="recmd-swiper" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="500" indicator-color="rgba(255,255,255,.8)" indicator-active-color="{{sites_theme[index]}}">     
+            <swiper-item wx:for='{{taylor}}'>
+                <image src='/images/taylor/{{item}}.jpg'></image>
+            </swiper-item>
+        </swiper>
+        <!-- 电台 -->
+        <view class='channel'>
+            <text class='channel-title'>电台</text>
+            <view class='channel-list'>
+                <view class='single-list' wx:for='{{taylor -2}}'>
+                    <view style='position: relative;'>
+                        <image src='/images/timg.jpg'></image>
+                        <image style='position:absolute; height:50rpx; width:50rpx; bottom:10rpx; right:10rpx;' src='/images/svg/play-circle.svg'></image>
+                    </view>
+                    <text>Taylor Swift - 流行乡村音乐女歌手</text>
+                </view>
+            </view>
+        </view>
+        <!-- 歌单 -->
+        <view class='channel'>
+            <text class='channel-title'>歌单</text>
+            <view class='channel-list'>
+                <view class='single-list' wx:for='{{taylor + 1}}' data-page='list' bindtap='goPage'>
+                    <image src='/images/timg.jpg'></image>
+                    <text>Taylor Swift - 流行乡村音乐女歌手</text>
+                </view>
+            </view>
+        </view>
+        <view class='take-place' hidden='{{!controlShow}}'></view>
+        </scroll-view>
+    </swiper-item>
+    <!-- 搜索 -->
+    <swiper-item class='search'>
+        <!-- 搜索框 -->
+        <view class='search-bar'>
+            <view class='search-box'>
+                <picker class='site-picker' bindchange="onSiteChange" value="{{index}}" range="{{sites}}">
+                    <image class='picker-logo' src='/images/ico/{{sites_en[index]}}.png'></image>
+                </picker>
+                <input class='input-search' type='text' placeholder='搜素歌名、歌手、专辑..' value='{{keyword}}' focus='{{searchInputFocus}}' bindinput="onSearchInput" bindfocus="onSearchFocus"></input>
+                <icon class="input-icon" type='search' size="14" hidden='{{keyword.length > 0}}'></icon>
+                <icon class="input-icon" type='clear' size='14' hidden='{{keyword.length == 0}}' bindtap='onSearchClear'></icon>
+            </view>
+        </view>
+        <!-- 关于 -->
+        <view class='about' hidden='{{results.length > 0}}'>
+            <text>Name: Music X\nVersion: 1.0\nAuthor: xeahsoon</text>
+        </view>
+        <!-- 结果 -->
+        <view class='result'>
+            <scroll-view style='height:100%;' scroll-y='true' enable-back-to-top='true'>
+                <view class="result-item">
+                    <image class='result-singer-pic' src='/images/timg.jpg'></image>
+                    <view class='result-item-info'>
+                        <text class="title">Taylor Swift</text>
+                        <view class="subtitle">
+                            <text>单曲：365</text>
+                            <text>专辑：58</text>
+                        </view>
+                    </view>
+                </view>
+                <view class='result-item' wx:for='{{songs}}'>
+                    <view class='result-item-info'>
+                        <text class="title">Taylor Swift - Love Story</text>
+                        <view class="subtitle">
+                            <text>Taylor Swift - Fearless</text>
+                            <text>Taylor Swift - Fearless</text>
+                            <text>Taylor Swift - Fearless</text>
+                        </view>
+                    </view>
+                    <image class='result-item-icon' src='/images/svg/play-light.svg'></image>
+                </view>
+                <view class='result-loading'>
+                    <image class='loading-img' src='/images/svg/loading.svg'></image>
+                    <text>努力加载中...</text>
+                </view>
+                <view class='take-place' hidden='{{!controlShow}}'></view>
+            </scroll-view>
+        </view>
+    </swiper-item>
+</swiper>
+
+<!-- 播放控制 -->
+<view class='control' hidden='{{!controlShow}}'>
+    <image class='song-pic' src='/images/timg.jpg' data-page='play' bindtap='goPage'></image>
+    <view class='song-info' data-page='play' bindtap='goPage'>
+        <text class="song-name">Taylor Swift - Love Story</text>
+        <view class="song-lyric">
+            <text>We were both young when I first saw you. I closed my eyes and..</text>
+            <text>Taylor Swift - Fearless</text>
+            <text>Taylor Swift - Fearless</text>
+        </view>
+    </view>
+    <image class='last-song' src='/images/svg/backward.svg'></image>
+    <view class='play-song' bindtap='playSong'>
+        <image hidden='{{musicPlaying}}' src='/images/svg/play-circle.svg'></image>
+        <image hidden='{{!musicPlaying}}' src='/images/svg/pause-circle.svg'></image>
+    </view>
+    <view class='next-song'>
+        <image src='/images/svg/forward.svg' style='height:100rpx;width:35rpx;'></image>
+    </view>
+</view>

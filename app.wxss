@@ -1,0 +1,11 @@
+/**app.wxss**/
+
+page{
+    margin: 0rpx;
+    padding: 0rpx;
+    color: #555;
+    font: 32rpx/1.5 FZLTXIHJW--GB1-0,"hiragino sans gb","Helvetica Neue",Helvetica,STHeiTi,Arial,sans-serif;
+    background: #fafafa;
+    height: 100%;
+    width: 100%;
+}
